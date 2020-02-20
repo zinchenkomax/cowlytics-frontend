@@ -7,7 +7,7 @@ import { GridComponent } from './components/grid/grid.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {StorageService} from './services/storage/storage.service';
 import { EditableComponent } from './components/grid/editable/editable.component';
 import { EditModeDirective } from './components/grid/editable/directives/edit-mode.directive';
@@ -17,6 +17,7 @@ import { FocusableDirective } from './components/grid/editable/directives/focusa
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
+import {FakeBackendInterceptor} from './interceptors/fake-backend/fake-backend-interceptor';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {MatButtonModule} from '@angular/material/button';
   ],
   providers: [
     StorageService,
+    { provide: HTTP_INTERCEPTORS, useClass: FakeBackendInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

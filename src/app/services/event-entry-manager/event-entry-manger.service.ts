@@ -38,7 +38,7 @@ export class EventEntryMangerService {
   add(entry: EventEntry): Observable<ResponseOne> {
     return this.http
       .post<ResponseOne>(
-        `http://localhost:3000/statistic/${entry.eventId}`,
+        `http://localhost:3000/statistic`,
         entry
       )
       .pipe(

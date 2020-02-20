@@ -1,6 +1,7 @@
 # CowlyticsFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
+Projects supports fake backend development perposes.
 
 ## Development server
 

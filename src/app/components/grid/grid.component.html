@@ -3,6 +3,7 @@
 <ng-container *ngIf="!selection.isEmpty()">
   <button mat-raised-button (click)="delete()">Delete selected</button>
 </ng-container>
+<hr />
 <table mat-table [dataSource]="dataSource | async" class="mat-elevation-z8">
 
   <!-- Checkbox Column -->

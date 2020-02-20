@@ -110,7 +110,6 @@ export class GridComponent implements OnInit, OnDestroy {
   add() {
     console.log('Adding');
     const entity = new EventEntry();
-    entity.eventId = '9999';
     this.eventEntryManager.add(entity)
       .pipe(
         tap(() => this.dataSource.next(Object.values(this.appStorage.all))),
